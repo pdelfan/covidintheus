@@ -3,6 +3,12 @@
     src: url(../fonts/BungeeShade-Regular.ttf);
 }
 
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
+
 .nav a {
     text-decoration: none;
     font-family: 'Bungee Shade', sans-serif;
@@ -53,7 +59,7 @@ body {
 }
 
 p {
-    width: 650px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -75,10 +81,10 @@ a:hover {
 
 h1 {
     font-size: 4em;
-    margin: 20px auto 10px auto;
+    margin: 1em auto 0.3em auto;
     color: #322df4;
-
 }
+
 
 h2 {
   color: #322df4;
@@ -90,7 +96,7 @@ h2 {
 }
 
 h3 {
-    width: 650px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -100,7 +106,7 @@ h3 {
 }
 
 img {
-  width: 650px;
+  max-width: 650px;
 }
 
 .about {
@@ -123,7 +129,7 @@ img {
 }
 
 .cover {
-    width: 900px;
+    max-width: 900px;
 }
 
 .wrapper {
@@ -155,12 +161,25 @@ img {
 
   .nav {
       width: 100%;
+      margin-bottom: 0.5em;
+  }
+
+  .nav a {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.3em;
   }
 
     article {
         width: 90%;
     }
-    p, h2, h3, .cover, .about {
+    p, h2, h3, .cover {
         width: 100%;
     }
 
@@ -174,6 +193,10 @@ img {
 
     #vis {
       width: 100%;
+    }
+
+    .about p, .about h3 {
+      width: 90%;
     }
 
 
