@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Bungee Shade';
+    src: url(../fonts/BungeeShade-Regular.ttf);
+}
+
+.nav a {
+    text-decoration: none;
+    font-family: 'Bungee Shade', sans-serif;
+    color: #322df4;
+    font-size: 2em;
+    line-height: 30px;
+    padding: 0 20px;
+
+}
+
+.nav a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+.nav {
+    z-index: 1000;
+    width: 100%;
+    margin: 0 0 6em 0;
+    align-items: center;
+    border-bottom: 1.5px solid #ccc;
+}
+
+.nav ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: #000;
+}
+
+article {
+  width: 80%;
+  margin: auto;
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 300;
+    /*background-color: #fffdf2;*/
+    background-color: #f4f7fb;
+}
+
+p {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+a {
+    color: #111;
+    font-weight: 400;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+
+h1 {
+    font-size: 4em;
+    margin: 20px auto 10px auto;
+    color: #322df4;
+
+}
+
+h2 {
+  color: #322df4;
+  font-weight: 400;
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+h3 {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    text-align: left;
+    color: #322df4;
+    font-size: 1.7em;
+}
+
+img {
+  width: 650px;
+}
+
+.about {
+  border-top: 2px dashed #391bfe;
+  padding: 3em 0 3em 0;
+  margin-top: 5em;
+}
+
+.about h3 {
+  font-size: 1em;
+  margin: 2em auto 1.5em auto;
+  max-width: 800px;
+}
+
+.about p {
+  font-size: 0.8750em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cover {
+    width: 900px;
+}
+
+.wrapper {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.latestNumbers {
+  margin: 0 auto;
+}
+
+#vis {
+  max-width: 1100px;
+  width: 90%;
+  height: 550px;
+  margin: 20px 0 20px 0;
+}
+
+#observablehq-438f2b23 {
+    max-width: 1100px;
+    margin: 70px auto auto auto;
+}
+
+.hover path:hover {
+  fill: #000;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .nav {
+      width: 100%;
+  }
+
+    article {
+        width: 90%;
+    }
+    p, h2, h3, .cover, .about {
+        width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    #observablehq-438f2b23 {
+        max-width: 100%;
+    }
+
+    #vis {
+      width: 100%;
+    }
+
+
+
+
+}

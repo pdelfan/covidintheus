@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COVID-19 Cases in the United States</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <nav class="nav">
+
+
+
+
+    <ul>
+      <li><a href="./index.html">Covid-19 in the U.S.</a></li>
+    </ul>
+  </nav>
+
+
+<article>
+    <h1>Coronavirus in the United States</h1>
+    <h2>COVID-19 is now the No. 3 cause of death in the United States, surpassing accidents, diabetes, Alzheimer's, and many more.</h2>
+
+    <img class="cover" src="./img/3.png" alt="people wearking masks">
+
+    <h3>What is COVID-19?</h3>
+
+    <p>From <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention (CDC)</a>:</p>
+    <p>Coronaviruses are a large family of viruses found mostly in animals. In humans, they can cause diseases ranging
+        from the common cold to more severe diseases such as Severe Acute Respiratory Syndrome (SARS) and Middle East
+        Respiratory Syndrome (MERS). The disease caused by the new coronavirus has been named COVID-19.
+    </p>
+
+    <p>While many of the characteristics of COVID-19 are still unknown, mild to severe illness has been reported for
+        confirmed cases.
+    </p>
+
+    <h3>How does the virus spread?</h3>
+    <p>The virus that causes COVID-19 is thought to spread mainly from person to person, mainly through respiratory
+        droplets produced when an infected person coughs, sneezes, or talks. These droplets can land in the mouths or
+        noses of people who are nearby or possibly be inhaled into the lungs. Spread is more likely when people are in
+        close contact with one another (within about 6 feet).
+    </p>
+
+    <h3>Why it is important to wear a mask</h3>
+    <p>To reduce the spread of COVID-19, CDC recommends that people wear masks in public settings when around people outside of their household, especially when other social distancing measures are difficult to maintain.
+    </p>
+
+    <p>Masks may help prevent people who have COVID-19 from spreading the virus to others. Wearing a mask will help protect people around you, including those at higher risk of severe illness from COVID-19 and workers who frequently come into close contact with other people (e.g., in stores and restaurants). Masks are most likely to reduce the spread of COVID-19 when they are widely used by people in public settings. The spread of COVID-19 can be reduced when masks are used along with other preventive measures, including social distancing, frequent handwashing, and cleaning and disinfecting frequently touched surfaces.
+</p>
+
+<img src="./img/2.jpg" alt="covid-19 symptoms">
+
+<p>The masks recommended here are not surgical masks or respirators. Currently, those are critical supplies that should be reserved for healthcare workers and other first responders. Masks are not personal protective equipment (PPE). They are not appropriate substitutes for PPE such as respirators (like N95 respirators) or medical facemasks (like surgical masks) in workplaces where respirators or facemasks are recommended or required to protect the wearer.
+
+</p>
+
+
+    <h3>Total COVID-19 cases and deaths in the United States</h3>
+    <p>The following chart shows the latest numbers as of today. Data is pulled
+        from <a href="https://github.com/nytimes/covid-19-data">The New York Times</a> which is updated daily.
+      </p>
+
+        <div class="latestNumbers">
+          <script src="./js/numbers.js"></script>
+        </div>
+
+    <div id="vis"></div>
+
+    <script type="text/javascript">
+      var spec = "https://gist.githubusercontent.com/pdelfan/5afa6892dd1a30fece66a4793f0e21ae/raw/98b097c50b41df47ade0f460b19a450fdd31ecb4/covid-cases.vg.json";
+      vegaEmbed('#vis', spec, {actions: false}).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    </script>
+
+    <h3>COVID-19 Map of cases in the U.S.</h3>
+    <p>The map below shows a geographic distribution of reported cases in the United States. Hover over to see the
+        number of cases for each state.</p>
+
+    <div id="observablehq-438f2b23"></div>
+    <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "https://api.observablehq.com/@pdelfan/covid-19-cases-u-s-map.js?v=3";
+        const inspect = Inspector.into("#observablehq-438f2b23");
+        (new Runtime).module(define, name => name === "chart" ? inspect() : undefined);
+    </script>
+
+
+
+    <h3>COVID-19 Cases in the United States by state</h3>
+    <p>The following line charts illustrate the latest COVID-19 cases in each U.S. state, updated daily. Data is pulled
+        from <a href="https://github.com/nytimes/covid-19-data">The New York Times</a>.</p>
+
+
+    <div class="wrapper">
+        <script src="./js/area.js"></script>
+    </div>
+
+  </article>
+
+
+    <footer class="about">
+
+    <h3>About this project</h3>
+    <p>By Pouria Delfanazari. Illustrations are made using D3 and Vega-Lite. Photos are taken from <a
+            href="https://unsplash.com">Unsplash</a>.</p>
+
+            <p>COVID-19 data used in illustrations are taken from  <a href="https://github.com/nytimes/covid-19-data">The New York Times</a>'s GitHub repository.
+              Information about COVID-19 is taken from <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention (CDC)</a>.</p>
+            </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>
