@@ -8,9 +8,9 @@ async function displayText() {
     allKeys = sumstat.map(function(d){return d.key})
 
     // width, height, margins
-    let margin = {top: 30, right: 5, bottom: 30, left: 5}
-    let width = 370 - margin.left - margin.right
-    let height = 90 - margin.top - margin.bottom
+    let margin = {top: 25, right: 0, bottom: 0, left: -3}
+    let width = 270 - margin.left - margin.right
+    let height = 75 - margin.top - margin.bottom
 
     // we'll use this for the content inside
     let boundedWidth = width - margin.left - margin.right
@@ -41,7 +41,7 @@ async function displayText() {
       .append('g')
       .attr("font-family", "sans-serif")
       .attr("text-anchor", "middle")
-      .attr("font-size", 28)
+      .attr("font-size", (width * 0.005) + "em")
       .attr("font-weight", "normal")
       .attr("fill", "#1d3557")
       .attr('transform', 'translate(80, -25)')
@@ -53,7 +53,7 @@ async function displayText() {
       .append('g')
       .attr("font-family", "sans-serif")
       .attr("text-anchor", "middle")
-      .attr("font-size", 25)
+      .attr("font-size", (width * 0.005) + "em")
       .attr("text-anchor", "middle")
       .attr("font-weight", "300")
       .attr("fill", "#1d3557")
@@ -66,10 +66,10 @@ async function displayText() {
       .append('g')
       .attr("font-family", "sans-serif")
       .attr("text-anchor", "middle")
-      .attr("font-size", 28)
+      .attr("font-size", (width * 0.005) + "em")
       .attr("font-weight", "normal")
       .attr("fill", "red")
-      .attr('transform', 'translate(250,-25)')
+      .attr('transform', 'translate(210,-25)')
       .append('text')
       .text('Deaths');
 
@@ -78,11 +78,11 @@ async function displayText() {
       .append('g')
       .attr("font-family", "sans-serif")
       .attr("text-anchor", "middle")
-      .attr("font-size", 25)
+      .attr("font-size", (width * 0.005) + "em")
       .attr("text-anchor", "middle")
       .attr("font-weight", "300")
       .attr("fill", "red")
-      .attr('transform', 'translate(250, 20)')
+      .attr('transform', 'translate(210, 20)')
       .append('text')
       .text(formatNumber(deaths));
 
