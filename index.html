@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>COVID-19 Cases in the United States</title>
+  <title>COVID-19 Cases in the U.S.</title>
   <link rel="stylesheet" href="./css/main.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -18,7 +18,7 @@
 
   <nav class="nav">
     <ul>
-      <li><a href="./index.html">Covid-19 in the Uinited States</a></li>
+      <li><a href="./index.html">Covid-19 in the U.S.</a></li>
     </ul>
   </nav>
 
@@ -121,33 +121,33 @@
 
     <table id="table">
     </table>
-    
+
     <script src="./js/draw-table.js"></script>
-    
+
     <script>
       (function () {
         var showResults;
-    
+
         $('#search-box').keyup(function () {
           var searchText;
           searchText = $('#search-box').val();
           return showResults(searchText);
         });
-    
+
         showResults = function (searchText) {
           $('tbody tr').hide();
           // return $('tbody tr:Contains(' + searchText + ')').show();
           return $('tbody tr:Contains(' + searchText + ')').css('display', 'table-row');
         };
-    
-    
+
+
         //# Override the Contains function to be case insensitive
         jQuery.expr[":"].Contains = jQuery.expr.createPseudo(function (arg) {
           return function (elem) {
             return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
           };
         });
-    
+
       }).call(this);
     </script>
 
