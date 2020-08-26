@@ -52,9 +52,9 @@ async function drawTable() {
     // { label: "DATE", type: "date", format: d => dateFormat(d.date) },
     { label: "STATE", type: "text", format: d => d.state },
     { label: "CASES", type: "number", format: d => (+d.cases), background: d => (caseScale(d.cases)) },
-    { label: "DEATHS", type: "number", format: d => +d.deaths, background: d => (deathScale(d.deaths)) },  // Use colors blue to red to indicate temperature
-    { label: "PROBABLE CASES", type: "number", format: d => d3.format(".0f")(+d["probable_cases"]), background: d => (probableCaseScale(d["probable_cases"])) }, // Use colors white to slate gray to indicate windspeed
-    { label: "PROBABLE DEATHS", type: "symbol", format: d => (+d["probable_deaths"]), background: d => (probableDeathScale(d["probable_deaths"])) },
+    { label: "DEATHS", type: "number", format: d => +d.deaths, background: d => (deathScale(d.deaths)) }  // Use colors blue to red to indicate temperature
+    // { label: "PROBABLE CASES", type: "number", format: d => d3.format(".0f")(+d["probable_cases"]), background: d => (probableCaseScale(d["probable_cases"])) }, // Use colors white to slate gray to indicate windspeed
+    // { label: "PROBABLE DEATHS", type: "symbol", format: d => (+d["probable_deaths"]), background: d => (probableDeathScale(d["probable_deaths"])) },
   ]
 
   table.append("thead").append("tr")

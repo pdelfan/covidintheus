@@ -9,7 +9,7 @@ async function drawAreaChart() {
 
     // width, height, margins
     let margin = {top: 30, right: 5, bottom: 30, left: 5}
-    let width = 150 - margin.left - margin.right
+    let width = 155 - margin.left - margin.right
     let height = 200 - margin.top - margin.bottom
 
     // we'll use this for the content inside
