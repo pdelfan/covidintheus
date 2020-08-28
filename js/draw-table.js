@@ -6,9 +6,6 @@ async function drawTable() {
   const dateParser = d3.timeParse("%Y-%m-%d")
   const dateAccessor = d => dateParser(d.date)
 
-  dataset = dataset.sort((a, b) => dateAccessor(a) - dateAccessor(b))
-
-
   const table = d3.select("#table")
 
   const dateFormat = d => d3.timeFormat("%b %d")(dateParser(d))
@@ -25,34 +22,18 @@ async function drawTable() {
   const grayColorScale = d3.interpolateHcl("#fff", "#bdc4ca")   // wind speed
 
   const caseScale = d3.scaleLinear()
-    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d.cases))
+    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d["confirmed_cases"]))
     .range(["#d8d8ff", "#6262ff"])
 
   const deathScale = d3.scaleLinear()
-    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d.deaths))
+    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d["confirmed_deaths"]))
     .range(["#ffd8d8", "#ff6262"])
-
-  const probableCaseScale = d3.scaleLinear()
-    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d["probable_cases"]))
-    .range(["#efedf5", "#756bb1"])
-
-  const probableDeathScale = d3.scaleLinear()
-    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d["probable_deaths"]))
-    .range(["#fff8eb", "#ffc14e"])
-
-  const timeScale = d3.scaleLinear()
-    .domain([0, 24])
-    .range([0, 80])
-
-  const humidityScale = d3.scaleLinear()
-    .domain(d3.extent(dataset.slice(0, numberOfRows), d => +d.windSpeed))
-    .range([0, 1])
 
   const columns = [
     // { label: "DATE", type: "date", format: d => dateFormat(d.date) },
     { label: "STATE", type: "text", format: d => d.state },
-    { label: "CASES", type: "number", format: d => (+d.cases), background: d => (caseScale(d.cases)) },
-    { label: "DEATHS", type: "number", format: d => +d.deaths, background: d => (deathScale(d.deaths)) }  // Use colors blue to red to indicate temperature
+    { label: "CONFIRMED CASES", type: "number", format: d => (+d["confirmed_cases"]), background: d => (caseScale(d["confirmed_cases"])) },
+    { label: "CONFIRMED DEATHS", type: "number", format: d => +d["confirmed_deaths"], background: d => (deathScale(d["confirmed_deaths"])) }  // Use colors blue to red to indicate temperature
     // { label: "PROBABLE CASES", type: "number", format: d => d3.format(".0f")(+d["probable_cases"]), background: d => (probableCaseScale(d["probable_cases"])) }, // Use colors white to slate gray to indicate windspeed
     // { label: "PROBABLE DEATHS", type: "symbol", format: d => (+d["probable_deaths"]), background: d => (probableDeathScale(d["probable_deaths"])) },
   ]

@@ -33,13 +33,13 @@ async function drawAreaChart() {
         .style("transform", `translate(${ margin.left }px, ${ margin.top }px)`) // we translate it here so we can use 0 later for range
 
     // x scale
-    const xScale = d3.scaleUtc()
+    const xScale = d3.scaleTime()
       .domain(d3.extent(dataset, function(d) { return d.date }))
       .range([ 0, boundedWidth ])
 
 
     const xAxisGenerator = d3.axisBottom()
-      .ticks(4)
+      .ticks(3)
       .tickFormat(d3.timeFormat('%b'))  // shorthand month name
       .scale(xScale)
 
@@ -50,7 +50,7 @@ async function drawAreaChart() {
 
     // y scale
     const yScale = d3.scaleLinear()
-      .domain([0, d3.max(dataset, function(d) { return +d.cases })])
+      .domain([0, d3.max(dataset, function(d) { return +d.deaths })])
       .range([ boundedHeight, 0 ])
       .nice()
 
@@ -64,7 +64,7 @@ async function drawAreaChart() {
         return d3.area()
         .x(function(d) { return xScale(d.date) })
         .y0(yScale(0))
-        .y1(function(d) { return yScale(+d.cases) })
+        .y1(function(d) { return yScale(+d.deaths) })
           (d.values)
       })
 
@@ -79,7 +79,7 @@ async function drawAreaChart() {
       .attr("d", function(d){
       return d3.line()
         .x(function(d) { return xScale(d.date); })
-        .y(function(d) { return yScale(d.cases); })
+        .y(function(d) { return yScale(d.deaths); })
         (d.values)
     })
 
@@ -97,14 +97,14 @@ async function drawAreaChart() {
       .style("fill", "#111")
 
 
-    // cases label for latest date
+    // deaths label for latest date
     var formatNumber = d3.format(",")  // formatting number (adding comma for readability)
     bounds
       .append("text")
       .attr("text-anchor", "end")
       .attr("x", function(d) {return xScale(d.values[d.values.length-1].date)})
-      .attr("y", function(d) {return yScale(d.values[d.values.length-1].cases)-3})
-      .text(function(d) { return formatNumber(d.values[d.values.length-1].cases)})
+      .attr("y", function(d) {return yScale(d.values[d.values.length-1].deaths)-3})
+      .text(function(d) { return formatNumber(d.values[d.values.length-1].deaths)})
       .style("font-family", "sans-serif")
       .style("font-size", "0.6em")
 

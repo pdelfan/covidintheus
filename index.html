@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>COVID-19 Cases in the U.S.</title>
+  <title>COVID-19 in the U.S.</title>
   <link rel="stylesheet" href="./css/main.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
@@ -107,14 +107,18 @@
 
 
 
-    <h3>COVID-19 Cases in the United States by state</h3>
-    <p>The following line charts illustrate the latest COVID-19 cases in each U.S. state, updated daily. Data is pulled
+    <h3>COVID-19 Deaths in the United States by state</h3>
+    <p>The following line charts illustrate the latest COVID-19 deaths in each U.S. state, updated daily. Data is pulled
       from <a href="https://github.com/nytimes/covid-19-data">The New York Times</a>.</p>
 
 
     <div class="wrapper">
       <script src="./js/area.js"></script>
     </div>
+
+
+    <h3>Confirmed cases and deaths</h3>
+    <p>Confirmed cases are those that were confirmed by laboratory tests. Confirmed deaths deaths are those that were met the definition of a confirmed case. States that have not provided this information are marked as 0.</p>
 
 
     <input type="text" id="search-box" placeholder="Search states">
