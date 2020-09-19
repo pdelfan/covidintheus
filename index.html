@@ -116,45 +116,6 @@
       <script src="./js/area.js"></script>
     </div>
 
-
-    <h3>Confirmed cases and deaths</h3>
-    <p>Confirmed cases are those that were confirmed by laboratory tests. Confirmed deaths deaths are those that were met the definition of a confirmed case. States that have not provided this information are marked as 0.</p>
-
-
-    <input type="text" id="search-box" placeholder="Search states">
-
-    <table id="table">
-    </table>
-
-    <script src="./js/draw-table.js"></script>
-
-    <script>
-      (function () {
-        var showResults;
-
-        $('#search-box').keyup(function () {
-          var searchText;
-          searchText = $('#search-box').val();
-          return showResults(searchText);
-        });
-
-        showResults = function (searchText) {
-          $('tbody tr').hide();
-          // return $('tbody tr:Contains(' + searchText + ')').show();
-          return $('tbody tr:Contains(' + searchText + ')').css('display', 'table-row');
-        };
-
-
-        //# Override the Contains function to be case insensitive
-        jQuery.expr[":"].Contains = jQuery.expr.createPseudo(function (arg) {
-          return function (elem) {
-            return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
-          };
-        });
-
-      }).call(this);
-    </script>
-
   </article>
 
 
